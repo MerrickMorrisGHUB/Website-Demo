@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Component</title>
+    <style>
+.topnav {
+  overflow: hidden;
+  background-color: #285e97ff;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 18px 20px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.topnav a:hover {
+  background-color: #ffd400ff;
+  color: rgb(255, 255, 255);
+}
+
+.topnav a.active {
+  background-color: #ffd400ff;
+  color: #285e97ff;
+}/* The main container box */
+
+.container-box {
+    border: 2px solid #ccc; 
+    background-color: #eee; 
+    border-radius: 5px; 
+    padding: 16px; 
+    margin: 16px 0;
+}
+
+/* The floating profile/avatar image */
+.avatar-image {
+    float: left; 
+    margin-right: 20px; 
+    border-radius: 50%;
+    width: 60px; /* Added a default size so the circle renders correctly */
+    height: 60px;
+}
+
+/* The text content next to the image */
+.text-content {
+    font-size: 20px; 
+     margin-right: 15px;
+    }
+
+/* The clearfix hack to fix the layout container from collapsing */
+.clearfix::after {
+    content: ""; 
+    clear: both; 
+    display: table;
+    }
+    
+.grid-container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  place-items: center; /* Centers both horizontally and vertically */
+  height: 500px;
+  background-color: #285e97ff;
+  color: #ffd400ff;
+  gap: 50px;
+  padding: 20px;
+  text-align: center;
+
+}
+.copy-container{
+    background-color: #285e97ff;
+  color: #ffd400ff;
+  gap: 50px;
+  padding: 20px;
+  text-align: center;
+}
+.map-div {
+  grid-column: span 2;            /* Forces the map to drop below and take up both columns */
+  display: flex;
+  justify-content: center;        /* Perfectly centers the iframe inside the map-div */
+  width: 100%;
+}    
+    </style>
+</head>
+
+<body>
+   
+<div class="topnav">
+  <a href="index.html"><img src="assets\logoClipped.png" alt="Coleg Ceredigion Logo" style="width:100px;height:30px;"></a>
+  <a class="active" href="courses.html">Course Information</a>
+  <a href="app.html">App Information</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="application.html">Apply Now</a>
+</div>
+
+
+
+<div class="grid-container">
+ 
+      <div class="logo">
+          <img src="data:image/png;base64,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" alt="Coleg Ceredigion Logo">
+      </div>
+
+      <html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+
+
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+
+<table style="width:100%">
+  <tr>
+    <th>Course</th>
+    <th>Application links</th>
+    <th>Main Course link</th>
+  </tr>
+  <tr>
+    <td>Construction Level 1</td>
+    <td>https://www.csgcc.ac.uk/en/programme-courses/college-course/construction/bricklaying#t-15824-1</td>
+    <td>https://www.csgcc.ac.uk/en/subjects/construction</td>
+  </tr>
+  <tr>
+    <td>Construction Level 2+3</td>
+    <td>https://www.csgcc.ac.uk/en/programme-courses/college-course/construction/bricklaying#t-15824-2</td>
+    <td>https://www.csgcc.ac.uk/en/subjects/construction</td>
+  </tr>
+</table>
+
+
+</body>
+</html>
+     
+      
+</div>
+
+<div class="copy-container">
+  <div class="copyright">
+      <p>&copy; 2026 Coleg Ceredigion. All Rights Reserved.</p>
+  </div>
+</div>
+
+
+
+</body>
+</html>
